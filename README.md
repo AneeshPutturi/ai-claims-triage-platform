@@ -189,27 +189,53 @@ Success is measured by operational impact, not novelty:
 
 ## Getting Started
 
+### Quick Links
+- 📖 **[Complete Documentation Index](DOCUMENTATION.md)** - All documentation organized by topic
+- 🚀 **[Setup & Testing Guide](SETUP.md)** - How to run and test the platform
+- 🏗️ **[Infrastructure Guide](infra/README.md)** - Azure deployment with Bicep
+- 💻 **[Source Code Guide](src/README.md)** - Code structure and conventions
+
 ### Prerequisites
 - Azure subscription with appropriate permissions
 - Azure OpenAI access and API keys
-- Bicep CLI for infrastructure deployment
-- Development environment setup (see DEVELOPMENT.md)
+- .NET 10 SDK
+- Visual Studio 2026 or VS Code
+- SQL Server (local) or Azure SQL Database
 
 ### Quick Start
-1. Clone the repository
-2. Review the business requirements in this README
-3. Check DEVELOPMENT.md for local setup instructions
-4. Review ARCHITECTURE.md for system design details
-5. See DEPLOYMENT.md for Azure deployment procedures
+```bash
+# Clone repository
+git clone https://github.com/yourusername/ai-claims-triage-platform.git
+cd ai-claims-triage-platform
+
+# Open solution in Visual Studio 2026
+start ClaimsIntake.slnx
+
+# Follow SETUP.md for detailed instructions
+```
+
+See **[SETUP.md](SETUP.md)** for complete setup, configuration, and testing instructions.
 
 ### Documentation Structure
-- **README.md** (this file): Project overview and business context
-- **ARCHITECTURE.md**: System design, components, and data flows
-- **DEVELOPMENT.md**: Local development setup and guidelines
-- **DEPLOYMENT.md**: Azure deployment and infrastructure procedures
-- **API.md**: API specifications and integration points
-- **SECURITY.md**: Security policies, access control, and compliance
-- **OPERATIONS.md**: Monitoring, logging, and operational procedures
+- **[README.md](README.md)** (this file): Project overview and business context
+- **[DOCUMENTATION.md](DOCUMENTATION.md)**: Complete documentation index with all links
+- **[SETUP.md](SETUP.md)**: How to run, test, and deploy the platform
+- **[docs/](docs/)**: Business policies and architecture documents
+  - [Product Contract](docs/product-contract.md)
+  - [Domain Model](docs/domain-model.md)
+  - [Data Model](docs/data-model.md)
+  - [Azure Topology](docs/azure-topology.md)
+  - [AI Extraction Policy](docs/ai-extraction-policy.md)
+  - [Verification Policy](docs/verification-policy.md)
+  - [Risk Assessment Policy](docs/risk-assessment-policy.md)
+  - [Document Ingestion Policy](docs/document-ingestion-policy.md)
+  - [Triage & Routing Policy](docs/triage-routing-policy.md)
+  - [Database Migration Strategy](docs/db-migration-strategy.md)
+- **[src/](src/)**: Source code and phase summaries
+  - [Phase 5-10 Summaries](src/)
+- **[infra/](infra/)**: Infrastructure as Code (Bicep templates)
+- **[db/](db/)**: Database migrations
+- **[ai/](ai/)**: AI schemas and prompts
 
 ## Key Architectural Decisions
 
