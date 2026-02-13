@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "version": "v1",
+  "title": "Claim Extraction Schema",
+  "description": "Canonical schema for AI-extracted claim data. All fields are optional. AI returns null for unknown values.",
+  "type": "object",
+  "properties": {
+    "lossDate": {
+      "type": ["string", "null"],
+      "format": "date",
+      "description": "The date the loss occurred (YYYY-MM-DD format). Must be a specific date, not a range."
+    },
+    "lossLocation": {
+      "type": ["string", "null"],
+      "description": "The address or location where the loss occurred."
+    },
+    "lossType": {
+      "type": ["string", "null"],
+      "enum": ["PropertyDamage", "Liability", "BusinessInterruption", "Theft", "Fire", "Water", "Wind", "Other", null],
+      "description": "The category of loss."
+    },
+    "lossDescription": {
+      "type": ["string", "null"],
+      "description": "A factual description of what happened."
+    },
+    "propertyAddress": {
+      "type": ["string", "null"],
+      "description": "The address of the damaged property (if different from loss location)."
+    },
+    "estimatedDamageAmount": {
+      "type": ["number", "null"],
+      "description": "A dollar amount mentioned in the document (not calculated by AI)."
+    },
+    "contactPhone": {
+      "type": ["string", "null"],
+      "description": "Phone number mentioned in the document."
+    },
+    "contactEmail": {
+      "type": ["string", "null"],
+      "description": "Email address mentioned in the document."
+    },
+    "involvedParties": {
+      "type": ["array", "null"],
+      "items": {
+        "type": "string"
+      },
+      "description": "Names of individuals or entities mentioned in the document."
+    }
+  },
+  "additionalProperties": false
+}

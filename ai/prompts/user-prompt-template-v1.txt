@@ -1,0 +1,9 @@
+Extract structured data from the following claim document.
+
+Return a JSON object conforming to this schema:
+{schema}
+
+Document content:
+{document_content}
+
+Remember: Return ONLY valid JSON. Use null for any field not present in the document.

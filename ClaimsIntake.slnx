@@ -1,0 +1,21 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src\ClaimsIntake.Domain\ClaimsIntake.Domain.csproj" Type="Classic C#" />
+    <Project Path="src\ClaimsIntake.Application\ClaimsIntake.Application.csproj" Type="Classic C#">
+      <Dependency Project="src\ClaimsIntake.Domain\ClaimsIntake.Domain.csproj" />
+    </Project>
+    <Project Path="src\ClaimsIntake.Infrastructure\ClaimsIntake.Infrastructure.csproj" Type="Classic C#">
+      <Dependency Project="src\ClaimsIntake.Application\ClaimsIntake.Application.csproj" />
+      <Dependency Project="src\ClaimsIntake.Domain\ClaimsIntake.Domain.csproj" />
+    </Project>
+    <Project Path="src\ClaimsIntake.API\ClaimsIntake.API.csproj" Type="Classic C#">
+      <Dependency Project="src\ClaimsIntake.Application\ClaimsIntake.Application.csproj" />
+      <Dependency Project="src\ClaimsIntake.Infrastructure\ClaimsIntake.Infrastructure.csproj" />
+      <Dependency Project="src\ClaimsIntake.Domain\ClaimsIntake.Domain.csproj" />
+    </Project>
+  </Folder>
+  <Properties>
+    <Property Name="Configuration|Platform=Debug|Any CPU" />
+    <Property Name="Configuration|Platform=Release|Any CPU" />
+  </Properties>
+</Solution>
